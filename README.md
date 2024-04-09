@@ -1,5 +1,5 @@
 # cpp-project-collig
-<h1>---- References used ---- -</h1>
+<h1>---- References used -----</h1>
 
 https://www.geeksforgeeks.org/print-calendar-for-a-given-year/ <br />
 https://www.tutorialspoint.com/print-calendar-for-a-given-year-in-cplusplus <br />

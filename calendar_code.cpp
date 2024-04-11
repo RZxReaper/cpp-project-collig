@@ -1,6 +1,7 @@
+// Online C++ compiler to run C++ program online
 #include <iostream>
 using namespace std;
-const string days=" mon  tue  wed  thu  fri  sat sun";
+const string days="mon  tue  wed  thu  fri  sat sun";
 const string months[12]={"January","February","March","April","May","June","July","August","September","October","November","Decmeber"};
 const int t[] = { 0, 3, 2, 5, 0, 3, 5, 1, 4, 6, 2, 4 };
 class calendar{
@@ -36,14 +37,25 @@ calendar(int d,int m,int y){
 }
     void disp(){
         cout<<"---------------"<<month_name<<"---------------"<<endl;
-        cout<<days;
+        cout<<days<<endl;
+        for(int i=0;i<f_day-1;i++){
+            cout<<"     ";
+        }
+        f_day=f_day-1;
+        for(int i=1;i<=day_number;i++){
+            cout<<i;
+            string spacing = (i/10==0) ? "    " : "   ";
+            cout<<spacing;
+            f_day++;
+            if (f_day==7){cout<<endl;f_day=0;}
+        }
     }
 
     
 };
 
 int main() {
-    calendar c(7,2,2024);
+    calendar c(4,4,2024);
     c.disp();
 
     return 0;

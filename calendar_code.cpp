@@ -1,6 +1,7 @@
 // Online C++ compiler to run C++ program online
 #include <iostream>
 using namespace std;
+
 const string days="mon  tue  wed  thu  fri  sat sun";
 const string months[12]={"January","February","March","April","May","June","July","August","September","October","November","Decmeber"};
 const int t[] = { 0, 3, 2, 5, 0, 3, 5, 1, 4, 6, 2, 4 };
@@ -52,6 +53,46 @@ calendar(int d,int m,int y){
     }
 
     
+};
+
+class UserLogin
+{
+private:
+    string userName;
+    string userPassword;
+public:
+    UserLogin()
+    {
+        userName="User";
+        userPassword="Password";
+    }
+    int Login()
+    {
+        int loginAttempt = 0;
+        while (loginAttempt<3)
+        {
+           cout << "Please enter your user name: ";
+           cin >> userName;
+           cout << "Please enter your user password: ";
+           cin >> userPassword;
+           if (userName == "User" && userPassword == "Password")
+           {
+            cout << "Welcome back User!"<<endl;
+            return 1;
+            break;
+           }
+           else
+           {
+            cout << "Invalid login attempt. Please try again.\n" << endl;
+            loginAttempt++;
+           }
+        }
+        if (loginAttempt == 3)
+        {
+            cout << "Too many login attempts! Please try again after sometime or reset your user name and password.";
+            exit(0);
+        }
+    }
 };
 
 int main() {

@@ -1,0 +1,51 @@
+#include <iostream>
+using namespace std;
+
+class UserLogin
+{
+private:
+    string userName;
+    string userPassword;
+public:
+    UserLogin()
+    {
+        userName="User";
+        userPassword="Password";
+    }
+    int Login()
+    {
+        int loginAttempt = 0;
+        while (loginAttempt<3)
+        {
+           cout << "Please enter your user name: ";
+           cin >> userName;
+           cout << "Please enter your user password: ";
+           cin >> userPassword;
+           if (userName == "User" && userPassword == "Password")
+           {
+            cout << "Welcome back User!"<<endl;
+            return 1;
+            break;
+           }
+           else
+           {
+            cout << "Invalid login attempt. Please try again.\n" << endl;
+            loginAttempt++;
+           }
+        }
+        if (loginAttempt == 3)
+        {
+            cout << "Too many login attempts! Please try again after sometime or reset your user name and password.";
+            exit(0);
+        }
+    }
+};
+int main()
+{
+    UserLogin user;
+    if(user.Login()==1)
+    {
+        //here the rest of the code begins.
+    }
+    return 0;
+}

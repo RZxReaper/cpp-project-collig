@@ -39,13 +39,16 @@ calendar(int d,int m,int y){
 }
     void set_rem(){cout<<"enter reminder date for current month"<<endl;cin>>reminder;}
     void disp(){
+        cout<<f_day<<endl;
         cout<<"---------------"<<month_name<<"---------------"<<endl;
         cout<<days<<endl;
+        if (f_day-1==-1){f_day=7;}
         for(int i=0;i<f_day-1;i++){
             cout<<"     ";
         }
         f_day=f_day-1;
         for(int i=1;i<=day_number;i++){
+            if (f_day==7){cout<<endl;f_day=0;}
             if (i==reminder){
                 cout<<"R    ";
             }
@@ -55,7 +58,6 @@ calendar(int d,int m,int y){
             cout<<spacing;
             }
             f_day++;
-            if (f_day==7){cout<<endl;f_day=0;}
         }
     }
 
@@ -106,8 +108,10 @@ int main() {
     UserLogin user;
     if(user.Login()==1)
     {
-        //here the rest of the code begins.
-        calendar c(4,4,2024);
+        cout<<"Enter day, month and year in format dd mm yy of the calendar you want to check"<<endl;
+        int dd,mm,yyyy;
+        cin>>dd>>mm>>yyyy;
+        calendar c(dd,mm,yyyy);
         c.set_rem();
         c.disp();
     }

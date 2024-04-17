@@ -103,9 +103,14 @@ public:
 };
 
 int main() {
-    calendar c(4,4,2024);
-    c.set_rem();
-    c.disp();
+    UserLogin user;
+    if(user.Login()==1)
+    {
+        //here the rest of the code begins.
+        calendar c(4,4,2024);
+        c.set_rem();
+        c.disp();
+    }
 
     return 0;
 }

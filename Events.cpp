@@ -1,5 +1,6 @@
 // Online C++ compiler to run C++ program online
 #include <iostream>
+#include <bits/stdc++.h>
 using namespace std;
 
 const string days="Mon  Tue  Wed  Thu  Fri  Sat Sun";
@@ -48,6 +49,7 @@ calendar(int d,int m,int y){
             cout<<"Enter date of event "<<(i+1)<<": "<<endl;
             cin>>dates[i];
         }
+        sort(dates,dates + n);
     }
     void disp()
     {

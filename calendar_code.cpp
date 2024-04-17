@@ -12,6 +12,7 @@ class calendar{
     string month_name;
     int f_day;
     int day_number;
+    int reminder;
 public:
 calendar(int d,int m,int y){
     day=d;
@@ -36,6 +37,7 @@ calendar(int d,int m,int y){
     }
 
 }
+    void set_rem(){cout<<"enter reminder date for current month"<<endl;cin>>reminder;}
     void disp(){
         cout<<"---------------"<<month_name<<"---------------"<<endl;
         cout<<days<<endl;
@@ -44,9 +46,14 @@ calendar(int d,int m,int y){
         }
         f_day=f_day-1;
         for(int i=1;i<=day_number;i++){
+            if (i==reminder){
+                cout<<"R    ";
+            }
+            else{
             cout<<i;
             string spacing = (i/10==0) ? "    " : "   ";
             cout<<spacing;
+            }
             f_day++;
             if (f_day==7){cout<<endl;f_day=0;}
         }
@@ -97,6 +104,7 @@ public:
 
 int main() {
     calendar c(4,4,2024);
+    c.set_rem();
     c.disp();
 
     return 0;

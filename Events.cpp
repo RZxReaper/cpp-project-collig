@@ -58,21 +58,20 @@ calendar(int d,int m,int y){
             cout<<"     ";
         }
         f_day=f_day-1;
+        int event_no=0;
         for(int i=1;i<=day_number;i++)
         {
-            for(int j=0;j<n;j++)
-            {
-                if (i==dates[j])
+            if (i==dates[event_no])
                 {
                    cout<<"R    ";
-                   break;
+                   event_no++;
                 }
             else
             {
             cout<<i;
             string spacing = (i/10==0) ? "    " : "   ";
             cout<<spacing;
-            }}
+            }
             f_day++;
             if (f_day==7){cout<<endl;f_day=0;}
         }

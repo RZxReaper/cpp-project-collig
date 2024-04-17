@@ -3,7 +3,7 @@
 using namespace std;
 
 const string days="mon  tue  wed  thu  fri  sat sun";
-const string months[12]={"January","February","March","April","May","June","July","August","September","October","November","Decmeber"};
+const string months[12]={"January","February","March","April","May","June","July","August","September","October","November","December"};
 const int t[] = { 0, 3, 2, 5, 0, 3, 5, 1, 4, 6, 2, 4 };
 class calendar{
     int day;
@@ -22,7 +22,7 @@ calendar(int d,int m,int y){
     int ytemp=year;
     ytemp-=month_number<3;
     f_day=( ytemp + ytemp/4 - ytemp/100 + ytemp/400 + t[month_number-1] + 1) % 7;
-    switch(month_number){
+    switch(month_number-1){
         case 0:
         case 2:
         case 4:

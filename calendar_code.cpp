@@ -84,11 +84,22 @@ calendar(int d,int m,int y){
     }
     void event_disp()
     {
+        int pos[n];
+        for(int i=0;i<n;i++)
+        {
+            for(int j=0;j<n;j++)
+            {
+                if(event_dates[i]==unsorted_event_dates[j])
+                {
+                   pos[i]=j;
+                }
+            }
+        }
         cout<<endl<<"All the Saved Events: "<<endl;
         for(int i=0;i<n;i++)
         {
-            cout<<"Event "<<(i+1)<<" Name: "<<event_names[i]<<endl;
-            cout<<"Event "<<(i+1)<<" Date: "<<unsorted_event_dates[i]<<endl;
+            cout<<"Event "<<(i+1)<<" Name: "<<event_names[pos[i]]<<endl;
+            cout<<"Event "<<(i+1)<<" Date: "<<event_dates[i]<<endl;
         }
     }
 };

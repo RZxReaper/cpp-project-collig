@@ -9,7 +9,6 @@ const string months[12]={"January","February","March","April","May","June","July
 const int t[] = { 0, 3, 2, 5, 0, 3, 5, 1, 4, 6, 2, 4 };
 class calendar{
     int n;
-    int day;
     int year;
     int month_number;
     string month_name;
@@ -19,15 +18,14 @@ class calendar{
     int unsorted_event_dates[31];
     string event_names[31];
 public:
-calendar(int d,int m,int y){
-    day=d;
+calendar(int m,int y){
     month_number=m;
     month_name=months[month_number-1];
     year=y;
     int ytemp=year;
     ytemp-=month_number<3;
     f_day=( ytemp + ytemp/4 - ytemp/100 + ytemp/400 + t[month_number-1] + 1) % 7;
-    switch(month_number){
+    switch(month_number-1){
         case 0:
         case 2:
         case 4:
@@ -95,7 +93,7 @@ calendar(int d,int m,int y){
                 }
             }
         }
-        cout<<endl<<"All the Saved Events: "<<endl;
+        cout<<endl;
         for(int i=0;i<n;i++)
         {
             cout<<"Event "<<(i+1)<<" Name: "<<event_names[pos[i]]<<endl;
@@ -149,8 +147,9 @@ int main()
     UserLogin user;
     if(user.Login()==1)
     {
-        //here the rest of the code begins.
-        calendar c(4,4,2024);
+        int m,y;
+        cout<<"Enter Year and Month required: "<<endl;cin>>y>>m;
+        calendar c(m,y);
         c.set_rem();
         c.disp();
         c.event_disp();

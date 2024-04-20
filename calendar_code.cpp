@@ -1,3 +1,4 @@
+// Online C++ compiler to run C++ program online
 #include <iostream>
 #include <bits/stdc++.h>
 #include <algorithm>
@@ -36,6 +37,14 @@ calendar(int m,int y){
         case 5:
         case 10:
         case 8: day_number=30; break;
+    }
+    if(month_number-1==1)
+    {
+        if((year%4==0 && year%100!=0)  || year%400==0)
+            day_number=29;
+        else
+            day_number=28;
+
     }
 
 }

@@ -64,6 +64,7 @@ calendar(int m,int y){
     {
         cout<<"---------------"<<month_name<<"---------------"<<endl;
         cout<<days<<endl;
+        if (f_day-1==-1){f_day=7;}
         for(int i=0;i<f_day-1;i++)
         {
             cout<<"     ";
